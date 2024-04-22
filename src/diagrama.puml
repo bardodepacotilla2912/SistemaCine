@@ -1,0 +1,43 @@
+@startuml Cine
+
+class Asiento {
+    - reservado: boolean
+
+    + Asiento (reservado : boolean)
+    + setReservado(): void
+    + getReservado(): boolean
+    + reservar(): void
+    + cancelar(): void
+
+    
+}
+
+class Sala {
+    - ArrayList <Arraylist <Integer>> asiento : Integer
+
+    'constructor'
+    + Sala()
+    + reservarAsiento(sala: int): void
+    + cancelarReserva(sala: int): void
+    + mostrarAsientosDisponibles(sala: int): void
+}
+
+class Cine {
+    - ArrayList <Sala> salas: Sala
+    -funcion: int
+
+    + Cine(numeroFunciones: int, salas: int)
+    + reservarAsiento( sala: int, funcion: int): void
+    + cancelarReserva( sala: int, funcion: int): void
+    + mostrarAsientosDisponibles(sala: int, funcion: int): void
+}
+
+class Reserva {
+    main(args: String[]): void
+}
+
+ Sala *-- Asiento
+ Reserva ..> Cine: crea
+ Cine *-- Sala
+
+@enduml
